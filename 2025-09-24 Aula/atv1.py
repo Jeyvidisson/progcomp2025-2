@@ -3,7 +3,7 @@
 # Utilize a fórmula da área do círculo. Considere o valor de π = 3.1416
 
 
-raio = int(input("Digite o raio do círculo: "));
+raio = float(input("Digite o raio do círculo: "));
 pi = 3.1416;
 area = pi * raio ** 2;
 

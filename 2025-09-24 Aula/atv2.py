@@ -3,9 +3,9 @@
 # Utilize a fórmula da área do trapézio.
 
 
-base_maior = int(input("Digite a base maior: "));
-base_menor = int(input("Digite a base menor: "));
-altura_    = int(input("Digite a altura do trapézio"));
+base_maior = float(input("Digite a base maior: "));
+base_menor = float(input("Digite a base menor: "));
+altura_    = float(input("Digite a altura do trapézio"));
 area       = ((base_maior + base_menor) * altura_) / 2
 
-print(f'A área do seu trapézio é de: {area}');
+print(f'A área do seu trapézio é de: {area:.2f}');

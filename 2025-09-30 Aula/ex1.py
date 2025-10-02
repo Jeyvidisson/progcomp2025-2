@@ -23,6 +23,7 @@
 
 '''
 
+from statistics import median
 import sys
 
 print('Calculadora de média ponderada disciplina; ');
@@ -33,6 +34,10 @@ if not (nota_01 >= 0) and (nota_01 <= 100):
     sys.exit('Primeira nota é inválida !!!')
 
 nota_02 = int(input("Digite a segunda nota:   "));
+
+if not (nota_02 >= 0) and (nota_02 <= 100):
+    sys.exit('Segunda nota é inválida !!!')
+
 peso_01 = 2;
 peso_02 = 3;
 
@@ -44,14 +49,29 @@ Faltas = int(input("Informe a quantidade de faltas do aluno:  "));
 Frequencia = round((1 - (Faltas / Carga_horaria)) * 100), 1
 
 print(f'Total de Aulas [ {Carga_horaria} ]');
+
+# Validar se a carga horária é maior que zero e menor ou igual a 360
+
+if not (0 < Carga_horaria <= 360):
+   sys.exit('Carga Horária inválida! Deve ser entre 1 e 360 horas/aula.')
+
+if not (0 <= Faltas <= Carga_horaria):
+   sys.exit(f'Quantidade de Faltas inválida! Deve ser entre 1 e {Carga_horaria} horas/aula.')
+
 print(f'Total de Faltas [ {Faltas} ]');
 print(f'Frequência [ {Frequencia} ]')
+print(f'A sua média da disciplina correspondente é de: {mp}');
 
 if (mp >= 60) and (Frequencia >= 75):
     print("Você foi aprovado");
-elif (mp >= 20 and (Frequencia >= 75)):
+elif (mp >= 20) and (Frequencia >= 75):
     print("Você está em prova final");
 else:
     print("Você foi reprovado");
+if (mp < 20) and (Frequencia < 75):
+    print('Motivo: Reprovado por falta e frequência');
 
-print(f'A sua média da disciplina correspondente é de: {mp}');
+elif (mp < 20):
+    print('Reprovado por nota')
+else:
+    print('Reprovado por falta')

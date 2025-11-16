@@ -67,3 +67,4 @@ Angulo_A = Lado_B**2 + Lado_C**2 - 2*Lado_B*Lado_C * cos(Lado_A)
 Angulo_B = Lado_A**2 + Lado_C**2 - 2*Lado_A*Lado_C * cos(Lado_B)
 Angulo_C = Lado_A**2 + Lado_B**2 - 2*Lado_A*Lado_B * cos(Lado_C)
 
+#ppppppppppppppppppppppppp
